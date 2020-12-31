@@ -72,13 +72,13 @@ st.write(df_factor_selection)
 image_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.jpg'
 data_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.csv'
 st.title('Backtest Results')
-#try:
-image=Image.open(image_string)
-st.image(image)
-df_data=pd.read_csv(data_string)
-df_data.drop(columns=['Unnamed: 0'],inplace=True)
-st.write(df_data)
-#except:
+try:
+    image=Image.open(image_string)
+    st.image(image)
+    df_data=pd.read_csv(data_string)
+    df_data.drop(columns=['Unnamed: 0'],inplace=True)
+    st.write(df_data)
+except:
     #st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
 
     
