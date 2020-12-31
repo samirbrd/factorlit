@@ -69,8 +69,8 @@ if add_selectbox_5=='Factor Weight':
     df_factor_selection['Quantity']=np.ceil(df_factor_selection['Weight']*int(add_selectbox_6)/df_factor_selection['Close'])
     df_factor_selection.drop(columns=['Weight'],inplace=True)
 st.write(df_factor_selection)
-image_string=path_string_1+add_selectbox_1+'\\'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.jpg'
-data_string=path_string_1+add_selectbox_1+'\\'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.csv'
+image_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.jpg'
+data_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.csv'
 st.title('Backtest Results')
 #try:
 image=Image.open(image_string)
