@@ -15,7 +15,7 @@ st.title('Factor Returns and Selections')
 st.write('For Investors who want to invest in markets with factor tilts')
 path_string_1="\\Factor Backtests\\"
 path_string_2="\\Factor Backtests\\Low Vol\\"
-path_string_3="/Factor Selections/"
+path_string_3="./Factor Selections/"
 
 dir_1={'High Alpha':'alpha','Low Vol':'vol','Low Beta':'beta','Low iVol':'ivol','High Momentum':'momentum'}
 dir_2={'NSE50':'2704','NSE200':'3385','NSE500':'3386'}
