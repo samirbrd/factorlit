@@ -79,6 +79,6 @@ try:
     df_data.drop(columns=['Unnamed: 0'],inplace=True)
     st.write(df_data)
 except:
-    #st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
+    st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
 
     
