@@ -80,5 +80,3 @@ try:
     st.write(df_data)
 except:
     st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
-
-    
