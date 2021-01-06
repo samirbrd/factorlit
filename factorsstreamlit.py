@@ -71,7 +71,7 @@ if add_selectbox_5=='Factor Weight':
 st.write(df_factor_selection)
 image_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.jpg'
 data_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.csv'
-index_string=path_string_1+add_selectbox_1+'\\'+add_selectbox_2+'.csv'
+index_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+'.csv'
 st.header('Backtest Results')
 try:
     image=Image.open(image_string)
