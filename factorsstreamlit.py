@@ -71,12 +71,18 @@ if add_selectbox_5=='Factor Weight':
 st.write(df_factor_selection)
 image_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.jpg'
 data_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.csv'
-st.title('Backtest Results')
+index_string=path_string_1+add_selectbox_1+'\\'+add_selectbox_2+'.csv'
+st.header('Backtest Results')
 try:
     image=Image.open(image_string)
     st.image(image)
     df_data=pd.read_csv(data_string)
     df_data.drop(columns=['Unnamed: 0'],inplace=True)
+    st.header('Strategy Backtest Returns')
     st.write(df_data)
+    df_index=pd.read_csv(index_string)
+    df_index.drop(columns=['Unnamed: 0'],inplace=True)
+    st.header('Benchmark Backtest Returns')
+    st.write(df_index)
 except:
     st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
