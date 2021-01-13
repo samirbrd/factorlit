@@ -88,3 +88,8 @@ try:
     st.write(df_index)
 except:
     st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
+
+disclaimer='This does not constitute investment advice. Only for educational purposes'
+ownership='Samir Shah,samirbrd@gmail.com'
+st.write(disclaimer)
+st.weite(ownership)
