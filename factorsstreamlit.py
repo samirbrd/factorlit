@@ -92,4 +92,4 @@ except:
 disclaimer='This does not constitute investment advice. Only for educational purposes'
 ownership='Samir Shah,samirbrd@gmail.com'
 st.write(disclaimer)
-st.weite(ownership)
+st.write(ownership)
