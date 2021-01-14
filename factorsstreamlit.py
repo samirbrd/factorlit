@@ -48,6 +48,10 @@ add_selectbox_6 = st.sidebar.selectbox(
     'Amount to be Invested',
     ('500000','750000','1000000','1500000','2000000','2500000')
 )
+add_selectbox_7 = st.sidebar.selectbox(
+    'Display Trades?',
+    ('YES','NO')
+)
 
 file_string_1=path_string_3+dir_2.get(add_selectbox_2)+add_selectbox_3+dir_1.get(add_selectbox_1)+'.csv'
 df_factor=pd.read_csv(file_string_1)
@@ -88,6 +92,17 @@ try:
     st.write(df_index)
 except:
     st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
+
+if add_selectbox_7=='YES':
+    data_string_trades=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Onlydetails.csv'
+    try:
+        st.header('Backtest Trade Details')
+        df_data_trades=pd.read_csv(data_string_trades)
+        st.write(df_data_trades)
+    except:
+        st.write('Backtest Trade Details Not Available')
+
+
 
 disclaimer='This does not constitute investment advice. Only for educational purposes'
 ownership='Samir Shah,samirbrd@gmail.com'
