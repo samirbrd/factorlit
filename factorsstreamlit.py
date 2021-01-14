@@ -98,6 +98,7 @@ if add_selectbox_7=='YES':
     try:
         st.header('Backtest Trade Details')
         df_data_trades=pd.read_csv(data_string_trades)
+        df_data_trades.drop(columns=['Unnamed: 0'],inplace=True)
         st.write(df_data_trades)
     except:
         st.write('Backtest Trade Details Not Available')
