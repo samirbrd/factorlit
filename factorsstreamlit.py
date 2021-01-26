@@ -33,8 +33,12 @@ add_selectbox_2 = st.sidebar.selectbox(
     ('NSE50','NSE200','NSE500')
 )
 add_selectbox_3 = st.sidebar.selectbox(
-    'Selection Days',
+    'Lookback Days',
     ('180','270','365')
+)
+add_selectbox_8 = st.sidebar.selectbox(
+    'Rebalancing Days',
+    ('30','90','180','270','365')
 )
 add_selectbox_4 = st.sidebar.selectbox(
     'No of Stocks Selected',
@@ -75,8 +79,8 @@ if add_selectbox_5=='Factor Weight':
     df_factor_selection['Quantity']=np.ceil(df_factor_selection['Weight']*int(add_selectbox_6)/df_factor_selection['Close'])
     df_factor_selection.drop(columns=['Weight'],inplace=True)
 st.write(df_factor_selection)
-image_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.jpg'
-data_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back 180 Rebalancing Days Long Strategy Only.csv'
+image_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Only.jpg'
+data_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Only.csv'
 index_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+'.csv'
 st.header('Backtest Results')
 try:
