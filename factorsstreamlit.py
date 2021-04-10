@@ -98,7 +98,7 @@ except:
     st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
 
 if add_selectbox_7=='YES':
-    data_string_trades=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back'+add_selectbox_8+' Rebalancing Days Long Strategy Onlydetails.csv'
+    data_string_trades=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Onlydetails.csv'
     try:
         st.header('Backtest Trade Details')
         df_data_trades=pd.read_csv(data_string_trades)
