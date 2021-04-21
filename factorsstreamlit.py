@@ -30,7 +30,7 @@ add_selectbox_1 = st.sidebar.selectbox(
 )
 add_selectbox_2 = st.sidebar.selectbox(
     'Benchmark',
-    ('NSE50','NSE200','NSE500','ex Index')
+    ('NSE50','NSE200','NSE500')
 )
 add_selectbox_3 = st.sidebar.selectbox(
     'Lookback Days',
