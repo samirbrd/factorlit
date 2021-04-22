@@ -20,7 +20,7 @@ df_date=pd.read_csv(path_string_3+'updated_till.csv')
 updated_till=df_date['Date'].loc[0]
 st.write('Updated till'+' '+updated_till)
 dir_1={'High Alpha':'alpha','Low Vol':'vol','Low Beta':'beta','Low iVol':'ivol','High Momentum':'momentum'}
-dir_2={'NSE50':'2704','NSE200':'3385','NSE500':'3386'}
+dir_2={'NSE50':'2704','NSE200':'3385','NSE500':'3386','ex Index':'0000'}
 
 
 
