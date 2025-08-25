@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run factorsstreamlit.py
+streamlit run factorsstreamlit.py
