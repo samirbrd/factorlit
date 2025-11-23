@@ -59,6 +59,7 @@ add_selectbox_7 = st.sidebar.selectbox(
 
 file_string_1=path_string_3+dir_2.get(add_selectbox_2)+add_selectbox_3+dir_1.get(add_selectbox_1)+'.csv'
 df_factor=pd.read_csv(file_string_1)
+print(df_factor)
 #In df_factor, delete the first column
 df_factor.drop(df_factor.columns[0], axis=1, inplace=True)
 df_factor.drop(columns=['Factor'],inplace=True)
@@ -116,4 +117,5 @@ if add_selectbox_7=='YES':
 disclaimer='This does not constitute investment advice. Only for educational purposes'
 ownership='Samir Shah,samirbrd@gmail.com'
 st.write(disclaimer)
+
 st.write(ownership)
