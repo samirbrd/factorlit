@@ -81,7 +81,7 @@ if add_selectbox_5=='Factor Weight':
         weights=weights[:-1]
     df_factor_selection['Weight']=weights
     df_factor_selection['Weight']=df_factor_selection['Weight']/df_factor_selection['Weight'].sum()
-    df_factor_selection['Quantity']=np.ceil(df_factor_selection['Weight']*int(add_selectbox_6)/df_factor_selection['Close'])
+    #df_factor_selection['Quantity']=np.ceil(df_factor_selection['Weight']*int(add_selectbox_6)/df_factor_selection['Close'])
     df_factor_selection.drop(columns=['Weight'],inplace=True)
 st.write(df_factor_selection)
 image_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Only.jpg'
@@ -119,4 +119,5 @@ ownership='Samir Shah,samirbrd@gmail.com'
 st.write(disclaimer)
 
 st.write(ownership)
+
 
