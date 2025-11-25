@@ -21,7 +21,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 # Use folder names without spaces for better Git compatibility
 path_string_1 = os.path.join(script_dir, "Factor Backtests") + os.sep
 path_string_2 = os.path.join(script_dir, "Factor Backtests", "Low Vol") + os.sep
-path_string_3 = os.path.join(script_dir, "Factor_Selections") + os.sep
+path_string_3 = os.path.join(script_dir, "factor_selections") + os.sep
 # Try to read the updated_till.csv file with error handling
 try:
     updated_till_path = os.path.join(script_dir, "Factor_Selections", 'updated_till.csv')
