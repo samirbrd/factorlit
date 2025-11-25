@@ -18,26 +18,18 @@ st.write('For Investors who want to invest in markets with factor tilts')
 # Get the directory where this script is located
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Use os.path.join for all path construction
+# Use folder names without spaces for better Git compatibility
 path_string_1 = os.path.join(script_dir, "Factor Backtests") + os.sep
 path_string_2 = os.path.join(script_dir, "Factor Backtests", "Low Vol") + os.sep
-path_string_3 = os.path.join(script_dir, "Factor Selections") + os.sep
-
+path_string_3 = os.path.join(script_dir, "Factor_Selections") + os.sep
 # Try to read the updated_till.csv file with error handling
 try:
-    updated_till_path = os.path.join(script_dir, "Factor Selections", 'updated_till.csv')
+    updated_till_path = os.path.join(script_dir, "Factor_Selections", 'updated_till.csv')
     if os.path.exists(updated_till_path):
         df_date = pd.read_csv(updated_till_path)
         updated_till = df_date['Date'].loc[0]
         st.write('Updated till' + ' ' + updated_till)
     else:
-        # Debug info to help identify the issue
-        st.warning(f'⚠️ File not found. Looking in: {updated_till_path}')
-        st.info(f'Script directory: {script_dir}')
-        if os.path.exists(os.path.join(script_dir, "Factor Selections")):
-            st.info(f'Files in Factor Selections: {os.listdir(os.path.join(script_dir, "Factor Selections"))}')
-        else:
-            st.error('Factor Selections folder not found!')
         st.write('Updated till: Data not available')
 except Exception as e:
     st.error(f'Error reading update date: {str(e)}')
@@ -110,9 +102,9 @@ except Exception as e:
     st.error(f'Error loading factor selection data: {str(e)}')
     st.write('Factor selection file not found. Please check if the required data files are present.')
 
-image_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Only.jpg'
-data_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Only.csv'
-index_string=path_string_1+add_selectbox_1+'/'+add_selectbox_2+'.csv'
+image_string=path_string_1+add_selectbox_1+os.sep+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Only.jpg'
+data_string=path_string_1+add_selectbox_1+os.sep+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Only.csv'
+index_string=path_string_1+add_selectbox_1+os.sep+add_selectbox_2+'.csv'
 st.header('Backtest Results')
 try:
     image=Image.open(image_string)
@@ -129,7 +121,7 @@ except:
     st.write('Backtest Data Not Available. Not enough or too much diversification for index size')
 
 if add_selectbox_7=='YES':
-    data_string_trades=path_string_1+add_selectbox_1+'/'+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Onlydetails.csv'
+    data_string_trades=path_string_1+add_selectbox_1+os.sep+add_selectbox_2+' '+add_selectbox_1+' '+add_selectbox_4+' Stocks '+add_selectbox_5+' '+add_selectbox_3+' Days Look Back '+add_selectbox_8+' Rebalancing Days Long Strategy Onlydetails.csv'
     try:
         st.header('Backtest Trade Details')
         df_data_trades=pd.read_csv(data_string_trades)
