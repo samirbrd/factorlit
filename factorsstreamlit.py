@@ -11,27 +11,33 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 import os
-from pathlib import Path
 
 st.title('Factor Returns and Selections')
 st.write('For Investors who want to invest in markets with factor tilts')
 
 # Get the directory where this script is located
-base_dir = Path(__file__).parent
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
-path_string_1 = str(base_dir / "Factor Backtests") + "/"
-path_string_2 = str(base_dir / "Factor Backtests" / "Low Vol") + "/"
-path_string_3 = str(base_dir / "Factor Selections") + "/"
+# Use os.path.join for all path construction
+path_string_1 = os.path.join(script_dir, "Factor Backtests") + os.sep
+path_string_2 = os.path.join(script_dir, "Factor Backtests", "Low Vol") + os.sep
+path_string_3 = os.path.join(script_dir, "Factor Selections") + os.sep
 
 # Try to read the updated_till.csv file with error handling
 try:
-    updated_till_path = os.path.join(path_string_3, 'updated_till.csv')
+    updated_till_path = os.path.join(script_dir, "Factor Selections", 'updated_till.csv')
     if os.path.exists(updated_till_path):
         df_date = pd.read_csv(updated_till_path)
         updated_till = df_date['Date'].loc[0]
         st.write('Updated till' + ' ' + updated_till)
     else:
-        st.warning(f'⚠️ Updated date file not found at: {updated_till_path}')
+        # Debug info to help identify the issue
+        st.warning(f'⚠️ File not found. Looking in: {updated_till_path}')
+        st.info(f'Script directory: {script_dir}')
+        if os.path.exists(os.path.join(script_dir, "Factor Selections")):
+            st.info(f'Files in Factor Selections: {os.listdir(os.path.join(script_dir, "Factor Selections"))}')
+        else:
+            st.error('Factor Selections folder not found!')
         st.write('Updated till: Data not available')
 except Exception as e:
     st.error(f'Error reading update date: {str(e)}')
